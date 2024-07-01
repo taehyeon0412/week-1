@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
+const Square = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border: 1px solid green;
+`;
 
 function App() {
+  const testArr = ["가지", "감자", "오이", "고구마", "옥수수"];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      {testArr.map((testName, i) => (
+        <Square key={i}>{testName}</Square>
+      ))}
+    </Wrapper>
   );
 }
 
